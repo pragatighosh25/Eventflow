@@ -27,7 +27,7 @@ export default function EventRegister() {
 
   if (isRegistered(id, user.id)) {
     return (
-      <div className="rounded-2xl bg-white p-8 text-center shadow-card max-w-6xl mx-auto">
+      <div className="mx-auto max-w-lg rounded-2xl bg-white p-6 text-center shadow-card sm:p-8">
         <p className="text-slate-600">You are already registered.</p>
         <Link to={`/events/${id}`} className="mt-4 inline-block text-brand-600">
           Back to event
@@ -37,7 +37,7 @@ export default function EventRegister() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12 md:pb-0">
+    <>
       <Link
         to={`/events/${id}`}
         className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-brand-600"
@@ -45,10 +45,12 @@ export default function EventRegister() {
         <ArrowLeft size={18} />
         Back to event
       </Link>
-      <h1 className="text-2xl font-bold text-slate-900">Register for {event.title}</h1>
+      <h1 className="text-xl font-bold break-words text-slate-900 sm:text-2xl">
+        Register for {event.title}
+      </h1>
       <p className="mt-2 text-sm text-slate-500">Fill in your details to complete registration.</p>
 
-      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
         <RegistrationForm
           event={event}
           onSubmit={async (responses) => {
@@ -56,6 +58,6 @@ export default function EventRegister() {
           }}
         />
       </div>
-    </div>
+    </>
   );
 }

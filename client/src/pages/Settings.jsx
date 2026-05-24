@@ -40,7 +40,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="mx-auto max-w-lg">
+    <div className="mx-auto w-full max-w-lg">
       <div className="mb-8 flex items-center gap-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
           <SettingsIcon size={24} />
@@ -53,7 +53,7 @@ export default function Settings() {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-card"
+        className="space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6"
       >
         {saved && (
           <div className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">

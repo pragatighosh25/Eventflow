@@ -21,7 +21,7 @@ export default function OrganizerEvent() {
   const status = getEventStatus(event);
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12 md:pb-0">
+    <>
       <button
         type="button"
         onClick={() => navigate('/events')}
@@ -33,8 +33,8 @@ export default function OrganizerEvent() {
 
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-bold text-slate-900">{event.title}</h1>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <h1 className="text-xl font-bold text-slate-900 sm:text-2xl">{event.title}</h1>
             <Badge variant={status}>{status}</Badge>
           </div>
           <p className="mt-2 text-sm text-slate-500">{formatDateRange(event.startDate, event.endDate)} · {event.location}</p>
@@ -54,7 +54,7 @@ export default function OrganizerEvent() {
         </div>
       </div>
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
         <div className="mb-6 flex items-center gap-2">
           <Users className="text-brand-500" size={22} />
           <h2 className="text-lg font-semibold text-slate-900">
@@ -63,6 +63,6 @@ export default function OrganizerEvent() {
         </div>
         <RegistrantsTable event={event} />
       </section>
-    </div>
+    </>
   );
 }

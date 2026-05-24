@@ -69,10 +69,9 @@ export default function Dashboard() {
   const highlightEvents = [...ongoing, ...upcoming].slice(0, 3);
 
   return (
-    <div className="min-h-screen pb-20 md:pb-0">
-      <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-10 xl:px-14">
+    <>
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-slate-900">Welcome back, {user.name.split(' ')[0]}</h1>
+          <h1 className="text-xl font-bold text-slate-900 sm:text-2xl">Welcome back, {user.name.split(' ')[0]}</h1>
           <p className="mt-1 text-sm text-slate-500">
             {isOrganizer
               ? 'Overview of your events and registrations'
@@ -102,7 +101,7 @@ export default function Dashboard() {
         </div>
 
         <div className="grid gap-6 xl:grid-cols-2">
-          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-lg font-semibold text-slate-900">
                 {isOrganizer ? 'Live & upcoming' : 'Happening soon'}
@@ -119,7 +118,7 @@ export default function Dashboard() {
                   <li key={event.id}>
                     <Link
                       to={isOrganizer ? `/organizer/events/${event.id}` : `/events/${event.id}`}
-                      className="flex items-center justify-between rounded-xl border border-slate-100 p-3 transition hover:border-brand-200 hover:bg-brand-50/40"
+                      className="flex flex-col gap-2 rounded-xl border border-slate-100 p-3 transition hover:border-brand-200 hover:bg-brand-50/40 sm:flex-row sm:items-center sm:justify-between"
                     >
                       <div>
                         <p className="font-medium text-slate-800">{event.title}</p>
@@ -133,7 +132,7 @@ export default function Dashboard() {
             )}
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-lg font-semibold text-slate-900">Quick actions</h2>
               <Link to="/activity" className="text-sm font-medium text-brand-600 hover:text-brand-700">
@@ -170,7 +169,7 @@ export default function Dashboard() {
         </div>
 
         {!isOrganizer && (
-          <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
                 <Sparkles size={18} className="text-brand-600" />
@@ -212,7 +211,6 @@ export default function Dashboard() {
             )}
           </section>
         )}
-      </div>
-    </div>
+    </>
   );
 }

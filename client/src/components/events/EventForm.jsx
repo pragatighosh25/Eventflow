@@ -49,7 +49,7 @@ export default function EventForm({ initial, onSubmit, submitLabel = 'Save event
         <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>
       )}
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
         <h2 className="mb-5 text-lg font-semibold text-slate-900">Event details</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <Input
@@ -110,7 +110,7 @@ export default function EventForm({ initial, onSubmit, submitLabel = 'Save event
         </div>
       </section>
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-card sm:p-6">
         <AiRegistrationFieldsPanel
           onAppendFields={(fields) =>
             setForm((f) => ({
@@ -124,8 +124,8 @@ export default function EventForm({ initial, onSubmit, submitLabel = 'Save event
         </div>
       </section>
 
-      <div className="flex justify-end gap-3">
-        <Button type="submit" size="lg">
+      <div className="flex justify-stretch sm:justify-end">
+        <Button type="submit" size="lg" className="w-full sm:w-auto">
           {submitLabel}
         </Button>
       </div>

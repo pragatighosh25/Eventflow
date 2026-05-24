@@ -47,7 +47,7 @@ const stats = [
 
 export default function Landing() {
   return (
-    <div className="-mx-4 -mt-8 sm:-mx-6">
+    <div>
       <section className="relative overflow-hidden bg-white">
         {/* Background */}
         <div className="pointer-events-none absolute inset-0">
@@ -63,10 +63,10 @@ export default function Landing() {
           />
         </div>
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-24">
+        <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-20 lg:px-12 lg:py-24">
           {/* Copy */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl sm:text-5xl lg:text-[3.25rem]">
               Plan events.{" "}
               <span className="bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 bg-clip-text text-transparent">
                 Fill seats.
@@ -74,7 +74,7 @@ export default function Landing() {
               Stress less.
             </h1>
 
-            <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-slate-600 lg:mx-0">
+            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
               EventFlow helps you publish events, collect registrations with
               custom forms, and manage attendees — all in one clean, modern
               workspace.
@@ -196,8 +196,7 @@ export default function Landing() {
             Everything you need
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-slate-500">
-            From publishing to check-in, EventFlow keeps organizers  
-            <p>and attendees aligned.</p>
+            From publishing to check-in, EventFlow keeps organizers and attendees aligned.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
@@ -219,7 +218,7 @@ export default function Landing() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-500 to-brand-600 px-8 py-12 text-center shadow-xl shadow-brand-500/20 sm:px-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 px-5 py-10 text-center shadow-xl shadow-brand-500/20 sm:rounded-3xl sm:px-12 sm:py-12">
           <div
             className="pointer-events-none absolute inset-0 opacity-15"
             style={{

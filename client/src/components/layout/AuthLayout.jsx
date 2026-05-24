@@ -6,7 +6,7 @@ import { CalendarDays, Zap, ClipboardList } from "lucide-react";
 export default function AuthLayout() {
   return (
     <div
-      className="min-h-screen px-4 py-10"
+      className="min-h-screen px-4 py-6 sm:py-10"
       style={{
         background:
           "radial-gradient(circle at top left, #fff1e2 0%, #f8f4ec 45%, #eef2eb 100%)",
@@ -16,7 +16,7 @@ export default function AuthLayout() {
       <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center">
         {/* Main card */}
         <div
-          className="w-full max-w-5xl overflow-hidden rounded-[32px] lg:grid lg:grid-cols-2"
+          className="w-full max-w-5xl overflow-hidden rounded-2xl sm:rounded-3xl lg:grid lg:grid-cols-2 lg:rounded-[32px]"
           style={{
             border: "1px solid rgba(226,232,240,0.7)",
             boxShadow: "0 10px 40px rgba(15,23,42,0.08)",
@@ -118,7 +118,7 @@ export default function AuthLayout() {
           </div>
 
           {/* ── Right panel (form) ── */}
-          <div className="flex items-center justify-center bg-white px-4 py-12 sm:px-8">
+          <div className="flex items-center justify-center bg-white px-4 py-8 sm:px-8 sm:py-12">
             <div className="w-full max-w-md">
               <Outlet />
             </div>

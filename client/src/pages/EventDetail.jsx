@@ -41,7 +41,7 @@ export default function EventDetail() {
   const full = (event.registrations?.length ?? 0) >= event.capacity;
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12 md:pb-0">
+    <>
       <button
         type="button"
         onClick={() => navigate(-1)}
@@ -59,7 +59,7 @@ export default function EventDetail() {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-6 md:p-8">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">{event.title}</h1>
           <p className="mt-4 text-slate-600 leading-relaxed">{event.description}</p>
 
@@ -97,6 +97,6 @@ export default function EventDetail() {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -79,39 +79,40 @@ export default function EventCard({
             </p>
           </div>
 
-          <div className="mt-5 flex items-center gap-2">
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center">
             <Link
               to={
                 showOrganizerActions
                   ? `/organizer/events/${event.id}`
                   : `/events/${event.id}`
               }
-              className="flex-1 rounded-xl bg-brand-500 px-4 py-2.5 text-center text-sm font-medium text-white transition hover:bg-brand-600"
+              className="rounded-xl bg-brand-500 px-4 py-2.5 text-center text-sm font-medium text-white transition hover:bg-brand-600 sm:flex-1"
             >
               {showOrganizerActions
                 ? 'Manage'
                 : 'View details'}
             </Link>
 
-            {showOrganizerActions && status !== 'past' && (
-              <button
-                type="button"
-                onClick={() => setConfirmFinish(true)}
-                className="inline-flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50"
-              >
-                
-                Finish
-              </button>
-            )}
-
             {showOrganizerActions && (
-              <button
-                type="button"
-                onClick={() => setConfirmDelete(true)}
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-xl border border-red-200 text-red-600 transition hover:bg-red-50"
-              >
-                <Trash2 size={17} />
-              </button>
+              <div className="flex gap-2">
+                {status !== 'past' && (
+                  <button
+                    type="button"
+                    onClick={() => setConfirmFinish(true)}
+                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 sm:flex-none"
+                  >
+                    Finish
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setConfirmDelete(true)}
+                  className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-xl border border-red-200 text-red-600 transition hover:bg-red-50"
+                  aria-label="Delete event"
+                >
+                  <Trash2 size={17} />
+                </button>
+              </div>
             )}
           </div>
         </div>

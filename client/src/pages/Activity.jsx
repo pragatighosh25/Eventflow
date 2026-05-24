@@ -32,7 +32,7 @@ function AttendeeCard({ registration, event }) {
             Registered {formatDateTime(registration.registeredAt)}
           </p>
         </div>
-        <span className="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
+        <span className="max-w-full break-all rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
           {registration.responses?.email}
         </span>
       </div>
@@ -70,7 +70,7 @@ function OrganizerActivity({ groups }) {
               <button
                 type="button"
                 onClick={() => toggle(event.id)}
-                className="flex w-full items-start gap-4 p-5 text-left transition hover:bg-brand-50/60"
+                className="flex w-full flex-col gap-4 p-4 text-left transition hover:bg-brand-50/60 sm:flex-row sm:items-start sm:p-5"
               >
                 <div className="h-16 w-20 shrink-0 overflow-hidden rounded-xl border border-brand-100 bg-brand-50">
                   <EventImage event={event} />
@@ -91,7 +91,7 @@ function OrganizerActivity({ groups }) {
                     {formatDateRange(event.startDate, event.endDate)}
                   </p>
                 </div>
-                <div className="flex shrink-0 flex-col items-end gap-2">
+                <div className="flex w-full shrink-0 flex-row items-center justify-between gap-2 sm:w-auto sm:flex-col sm:items-end">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1 text-xs font-semibold text-white">
                     <Users size={14} />
                     {registrations.length} registered
@@ -106,11 +106,11 @@ function OrganizerActivity({ groups }) {
 
             {isOpen && (
               <div className="space-y-3 bg-slate-50/50 p-5">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm font-medium text-slate-700">Attendees & submitted details</p>
                   <Link
                     to={`/organizer/events/${event.id}`}
-                    className="text-sm font-medium text-brand-600 hover:text-brand-700"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-700"
                   >
                     Manage event
                     <ArrowRight size={14} />
@@ -177,9 +177,9 @@ export default function Activity() {
   const isEmpty = !activity || (Array.isArray(activity) && activity.length === 0);
 
   return (
-    <div className="pb-20 md:pb-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-900">Activity</h1>
+        <h1 className="text-xl font-bold text-slate-900 sm:text-2xl">Activity</h1>
         <p className="mt-1 text-sm text-slate-500">
           {isOrganizer
             ? 'Registrations grouped by event expand each to see attendee details'
@@ -221,6 +221,6 @@ export default function Activity() {
       {!loading && !error && !isEmpty && !isOrganizer && (
         <AttendeeActivity items={activity} />
       )}
-    </div>
+    </>
   );
 }

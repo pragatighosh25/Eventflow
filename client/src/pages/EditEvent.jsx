@@ -30,7 +30,7 @@ export default function EditEvent() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12 md:pb-0">
+    <>
       <Link
   to={`/organizer/events/${id}`}
   className="group inline-flex items-center gap-1 text-sm font-medium text-brand-600 transition-colors hover:text-brand-700"
@@ -49,6 +49,6 @@ export default function EditEvent() {
           }}
         />
       </div>
-    </div>
+    </>
   );
 }

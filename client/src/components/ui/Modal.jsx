@@ -5,9 +5,9 @@ export default function Modal({ open, onClose, title, children, footer }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center">
       <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={onClose} aria-hidden />
-      <div className="relative z-10 w-full max-w-md rounded-2xl bg-white p-6 shadow-elevated">
+      <div className="relative z-10 max-h-[min(90dvh,calc(100vh-2rem))] w-full max-w-md overflow-y-auto rounded-2xl bg-white p-5 shadow-elevated sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-4">
           <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
           <button
@@ -19,7 +19,11 @@ export default function Modal({ open, onClose, title, children, footer }) {
           </button>
         </div>
         <div className="text-sm text-slate-600">{children}</div>
-        {footer && <div className="mt-6 flex justify-end gap-3">{footer}</div>}
+        {footer && (
+          <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end sm:gap-3">
+            {footer}
+          </div>
+        )}
       </div>
     </div>
   );

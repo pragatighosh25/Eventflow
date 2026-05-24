@@ -23,12 +23,12 @@ export default function CustomFieldsBuilder({ fields, onChange }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="text-sm font-semibold text-slate-800">Registration form fields</h3>
           <p className="text-xs text-slate-500">Define extra info attendees must provide when signing up.</p>
         </div>
-        <Button type="button" variant="secondary" size="sm" onClick={addField}>
+        <Button type="button" variant="secondary" size="sm" className="w-full sm:w-auto" onClick={addField}>
           <Plus size={16} />
           Add field
         </Button>

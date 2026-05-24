@@ -30,9 +30,9 @@ export default function Events() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12 md:pb-0">
+    <>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Events</h1>
+        <h1 className="text-xl font-bold text-slate-900 sm:text-2xl">Events</h1>
         <p className="mt-1 text-sm text-slate-500">
           {isOrganizer ? 'Manage your published events' : 'Discover and register for events'}
         </p>
@@ -40,13 +40,13 @@ export default function Events() {
 
       {isOrganizer && <CreateEventCta className="mb-8" />}
 
-      <div className="mb-6 flex gap-2 rounded-xl bg-white p-1 shadow-sm ring-1 ring-slate-200">
+      <div className="mb-6 flex gap-1 rounded-xl bg-white p-1 shadow-sm ring-1 ring-slate-200 sm:gap-2">
         {EVENT_TABS.map((t) => (
           <button
             key={t.id}
             type="button"
             onClick={() => setTab(t.id)}
-            className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition ${
+            className={`min-w-0 flex-1 rounded-lg px-2 py-2 text-xs font-medium transition sm:px-4 sm:py-2.5 sm:text-sm ${
               tab === t.id
                 ? 'bg-brand-500 text-white shadow-sm'
                 : 'text-slate-600 hover:bg-slate-50'
@@ -99,6 +99,6 @@ export default function Events() {
         confirmLabel="Delete"
         danger
       />
-    </div>
+    </>
   );
 }

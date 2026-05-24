@@ -59,12 +59,14 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="ghost" size="lg">
+                  <Button variant="ghost" size="sm" className="sm:px-4 sm:py-2.5 sm:text-sm">
                     Log in
                   </Button>
                 </Link>
                 <Link to="/signup">
-                  <Button size="lg">Sign up</Button>
+                  <Button size="sm" className="sm:px-4 sm:py-2.5 sm:text-sm">
+                    Sign up
+                  </Button>
                 </Link>
               </>
             )}
@@ -73,7 +75,7 @@ export default function Navbar() {
       </header>
 
       {user && (
-        <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/95 px-2 py-2 backdrop-blur-md md:hidden">
+        <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/95 px-2 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] backdrop-blur-md md:hidden">
           <div className="mx-auto flex max-w-lg items-center justify-around gap-1">
             <NavLink to="/dashboard" className={navLinkClassMobile}>
               <LayoutDashboard size={20} />

@@ -19,7 +19,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-12 lg:flex-row lg:items-center lg:justify-between">
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:flex-row lg:items-center lg:justify-between">
         {/* left */}
         <div className="max-w-md">
           <Link to="/" className="inline-flex items-center gap-3">
@@ -60,7 +60,7 @@ export default function Footer() {
 
       {/* bottom */}
       <div className="relative border-t border-slate-100">
-        <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-5 sm:px-6">
           <p className="text-center text-sm text-slate-500">
             © {year} EventFlow.
           </p>
